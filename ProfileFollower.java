@@ -59,4 +59,9 @@ public class ProfileFollower implements Updatable {
 			i++;
 		}
 	}
+
+	@Override
+	public boolean isEnabled() {
+		return isEnabled;
+	}
 }
