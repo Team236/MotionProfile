@@ -22,6 +22,7 @@ public class ProfileFollower implements Updatable {
 	double endPosition;
 	public volatile boolean isEnabled;
 	public volatile boolean onTarget;
+	public volatile double error;
 
 	public ProfileFollower(Profile p, ProfileSource source, ProfileOutput output, FollowParameters params) {
 		this.profile = p;
@@ -46,6 +47,8 @@ public class ProfileFollower implements Updatable {
 		double position = profile.get(i).position;
 		// Determine if we are on target. Allowing error of +/- .1
 		onTarget = Math.abs(endPosition + source.getDistance()) < .1;
+
+		error = endPosition - source.getDistance();
 
 		// Calculate the acceleration and velocity feedforward
 		double a = kA * profile.get(i).acceleration;
