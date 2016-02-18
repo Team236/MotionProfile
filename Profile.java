@@ -151,8 +151,7 @@ public class Profile {
 
 		try {
 			File file = new File(path);
-			file.createNewFile();
-			FileWriter writer = new FileWriter(file);
+			FileWriter writer = new FileWriter(file, false);
 			writer.write(data);
 			writer.close();
 			System.out.println("File creation succeeded");
