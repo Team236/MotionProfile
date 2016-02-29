@@ -60,6 +60,16 @@ public class ProfileFollower implements Updatable {
 		// Increment our loop counter
 		i++;
 	}
+	
+	@Override
+	public void enable() {
+		this.isEnabled = true;
+	}
+	
+	@Override
+	public void disable() {
+		this.isEnabled = false;
+	}
 
 	@Override
 	public boolean isEnabled() {
