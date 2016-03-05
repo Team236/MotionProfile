@@ -40,8 +40,8 @@ public class ProfileFollower implements Updatable {
 		// Make sure i is within bounds of profile
 		if (i < 0) {
 			i = 0;
-		} else if (i > profile.length()) {
-			i = profile.length();
+		} else if (i >= profile.length()) {
+			i = profile.length() - 1;
 		}
 		// Get position from the profile
 		double position = profile.get(i).position;
