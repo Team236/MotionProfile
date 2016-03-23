@@ -75,4 +75,9 @@ public class ProfileFollower implements Updatable {
 	public boolean isEnabled() {
 		return isEnabled;
 	}
+	
+	@Override
+	public String toString() {
+		return "Motion Profile Follower";
+	}
 }
