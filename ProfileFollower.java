@@ -54,18 +54,18 @@ public class ProfileFollower implements Updatable {
 		double a = kA * profile.get(i).acceleration;
 		double v = kV * profile.get(i).speed;
 		// Calculate the correction
-		double correction = kP * Math.abs(source.getDistance() - position);
+		double correction = kP * (position - source.getDistance());
 		// Set the speed of the motor with correction
 		output.setSpeed(a + v + correction);
 		// Increment our loop counter
 		i++;
 	}
-	
+
 	@Override
 	public void enable() {
 		this.isEnabled = true;
 	}
-	
+
 	@Override
 	public void disable() {
 		this.isEnabled = false;
@@ -75,7 +75,7 @@ public class ProfileFollower implements Updatable {
 	public boolean isEnabled() {
 		return isEnabled;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Motion Profile Follower";
