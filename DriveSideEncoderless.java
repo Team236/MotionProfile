@@ -25,7 +25,7 @@ public class DriveSideEncoderless implements ProfileOutput {
 
 	@Override
 	public void setSpeed(double speed) {
-		for (int i = 0; i < motors.size() - 1; i++) {
+		for (int i = 0; i < motors.size(); i++) {
 			motors.get(i).set(speed);
 		}
 	}

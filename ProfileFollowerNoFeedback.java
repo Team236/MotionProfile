@@ -24,7 +24,7 @@ public class ProfileFollowerNoFeedback implements Updatable {
 	public volatile boolean onTarget;
 	public volatile double error;
 
-	public ProfileFollowerNoFeedback(Profile p, /*ProfileSource source,*/ ProfileOutput output, FollowParameters params) {
+	public ProfileFollowerNoFeedback(Profile p, ProfileOutput output, FollowParameters params) {
 		this.profile = p;
 		//this.source = source;
 		this.output = output;
@@ -44,19 +44,18 @@ public class ProfileFollowerNoFeedback implements Updatable {
 			i = profile.length() - 1;
 		}
 		// Get position from the profile
-		double position = profile.get(i).position;
+		//double position = profile.get(i).position;
 		// Determine if we are on target. Allowing error of +/- .1
 		//onTarget = Math.abs(endPosition + source.getDistance()) < .1;
 
 		//error = endPosition - source.getDistance();
 
 		// Calculate the acceleration and velocity feedforward
-		double a = kA * profile.get(i).acceleration;
 		double v = kV * profile.get(i).speed;
 		// Calculate the correction
 		double correction = 0;
 		// Set the speed of the motor with correction
-		output.setSpeed(a + v + correction);
+		output.setSpeed(v + correction);
 		// Increment our loop counter
 		i++;
 	}
