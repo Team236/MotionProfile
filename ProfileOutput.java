@@ -9,5 +9,5 @@ package motionProfile;
  *
  */
 public interface ProfileOutput {
-	public void setSpeed(double speed);
+    public void setSpeed(double speed);
 }
