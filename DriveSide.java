@@ -44,4 +44,8 @@ public class DriveSide implements ProfileSource, ProfileOutput {
     public double getDistance() {
 	return enc.getDistance();
     }
+
+    public double getSpeed() {
+	return motors.get(0).get();
+    }
 }

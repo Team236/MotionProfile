@@ -32,4 +32,8 @@ public class DriveSideEncoderless implements ProfileOutput {
 	    motors.get(i).set(speed);
 	}
     }
+
+    public double getSpeed() {
+	return motors.get(0).get();
+    }
 }
