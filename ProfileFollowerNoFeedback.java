@@ -24,7 +24,7 @@ public class ProfileFollowerNoFeedback implements Updatable {
     public volatile boolean onTarget;
     public volatile double error;
 
-    public ProfileFollowerNoFeedback(Profile p, ProfileOutput output, FollowParameters params) {
+    public ProfileFollowerNoFeedback(Profile p, ProfileOutput output, FollowParameters params, boolean isInverted) {
 	this.profile = p;
 	// this.source = source;
 	this.output = output;

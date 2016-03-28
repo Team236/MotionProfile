@@ -24,7 +24,7 @@ public class ProfileFollower implements Updatable {
     public volatile boolean onTarget;
     public volatile double error;
 
-    public ProfileFollower(Profile p, ProfileSource source, ProfileOutput output, FollowParameters params) {
+    public ProfileFollower(Profile p, ProfileSource source, ProfileOutput output, FollowParameters params, boolean isInverted) {
 	this.profile = p;
 	this.source = source;
 	this.output = output;
