@@ -23,6 +23,8 @@ public class DriveSide implements ProfileSource, ProfileOutput {
     public DriveSide(ArrayList<SpeedController> _motors, Encoder _enc) {
 	this.enc = _enc;
 
+	motors = new ArrayList<SpeedController>();
+
 	// Copy motors from arg list to the private list
 	for (int i = 0; i < _motors.size() - 1; i++) {
 	    this.motors.add(_motors.get(i));
