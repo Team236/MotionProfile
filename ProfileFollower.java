@@ -23,10 +23,11 @@ public class ProfileFollower implements Updatable {
     public volatile boolean isEnabled;
     public volatile boolean onTarget;
     public volatile double error;
-    
+
     boolean isInverted;
 
-    public ProfileFollower(Profile p, ProfileSource source, ProfileOutput output, FollowParameters params, boolean _isInverted) {
+    public ProfileFollower(Profile p, ProfileSource source, ProfileOutput output, FollowParameters params,
+	    boolean _isInverted) {
 	this.profile = p;
 	this.source = source;
 	this.output = output;
@@ -35,7 +36,7 @@ public class ProfileFollower implements Updatable {
 	this.kP = params.kP;
 
 	this.endPosition = p.get(p.length() - 1).position;
-	
+
 	this.isInverted = _isInverted;
     }
 
@@ -60,9 +61,9 @@ public class ProfileFollower implements Updatable {
 	double correction = kP * (position - source.getDistance());
 	// Set the speed of the motor with correction
 	if (isInverted) {
-            output.setSpeed(-(v + correction));
+	    output.setSpeed(-(v + correction));
 	} else {
-            output.setSpeed(v + correction);
+	    output.setSpeed(v + correction);
 	}
 	// Increment our loop counter
 	i++;

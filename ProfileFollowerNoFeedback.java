@@ -34,7 +34,7 @@ public class ProfileFollowerNoFeedback implements Updatable {
 	this.kP = params.kP;
 
 	this.endPosition = p.get(p.length() - 1).position;
-	
+
 	this.isInverted = _isInverted;
     }
 
@@ -59,9 +59,9 @@ public class ProfileFollowerNoFeedback implements Updatable {
 	double correction = 0;
 	// Set the speed of the motor with correction
 	if (isInverted) {
-            output.setSpeed(-(v + correction));
+	    output.setSpeed(-(v + correction));
 	} else {
-            output.setSpeed(v + correction);
+	    output.setSpeed(v + correction);
 	}
 	// Increment our loop counter
 	i++;
