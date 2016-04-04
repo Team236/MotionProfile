@@ -115,6 +115,7 @@ public class Profile {
 		    break;
 		}
 		int pSize = length() - 1;
+		e.jerk = get(k).jerk;
 		e.acceleration = -get(k).acceleration;
 		e.speed = get(pSize).speed + e.acceleration * dt;
 		e.position = get(pSize).position + e.speed * dt;
