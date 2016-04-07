@@ -1,10 +1,7 @@
 # MotionProfile
 Code to generate and use motion profiles for smooth autonomous movement
 
-# Tickanum
-A fully-featured mecanum drive implementation
-
-This is Techno Ticks package, just like Updater, MotionProfile, Standard, etc.
+This is Techno Ticks package, just like Updater, Tickanum, Standard, etc.
 This means that it is designed to be easy to incorporate into your robot project,
 and it is meant to be abstract enough to run not only on an FRC robot, but any 
 robot that runs java.
