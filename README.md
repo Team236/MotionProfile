@@ -10,20 +10,22 @@ robot that runs java.
 
 If your robot project (`workspace/robot`) is not a git project, this is very simple.
 Just open the command line, navigate to `workspace/robot/src` and type the following
-command: `git clone https://https://github.com/Team236/MotionProfile.git motionProfile`.
-Updater is the only dependency for this project. Install it like so: 
-`git clone https://https://github.com/Team236/Updater.git updater`
+command: 
+```
+git clone https://https://github.com/Team236/MotionProfile.git motionProfile
+git clone https://https://github.com/Team236/Updater.git updater
+```
 
 If your robot project is a git project, then you have to add it as a git submodule.
 This is an experimental feature that hasn't existed for too long, so keep in mind
 that it's not perfect for more complex purposes. For what we're doing, however, it's
 perfect. Just navigate to `workspace/robot/src` and type the following commands:
 
-`git submodule add https://github.com/Team236/MotionProfile.git motionProfile`
-
-`git clone https://https://github.com/Team236/Updater.git updater`
-
-`git submodule init`
+```
+git submodule add https://github.com/Team236/MotionProfile.git motionProfile
+git submodule add https://https://github.com/Team236/Updater.git updater
+git submodule init
+```
 
 This will import the module and create unstaged changes. You
 will have to commit this change, and commit your change whenever you update the
