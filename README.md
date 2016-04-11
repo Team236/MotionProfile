@@ -41,9 +41,11 @@ After this, your tree should look like this:
                 first
                     ...
 
-# Using
+## Using
 
 Motion Profiles are easy to create, and moderately more difficult to follow.
 You can look at our 2016-Robot project for an example of how to implement this.
 
-More docs to come.
+### Generation
+
+Generating a profile is very simple. First, you need to tune it, and this is mostly trial and error. First, pick how far you want to go. At this point, you have to pick units. For most purposes, I recommend measuring in inches, so you can avoid doing obnoxious conversions to decimal, which is really no fun with the standard system. If you can use metric, know that I envy you. Anyways, the profiler is totally unit-agnostic, meaning its output is in whatever units you put into it.
