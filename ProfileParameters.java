@@ -16,13 +16,13 @@ package motionProfile;
  *            The maximum allowable maxJerk (ft/s/s/s)
  */
 public class ProfileParameters {
-    public double distance, maxVelocity, maxAccel, maxJerk;
+	public double distance, maxVelocity, maxAccel, maxJerk;
 
-    public ProfileParameters(double d, double v, double a, double j) {
-	distance = d;
-	maxVelocity = v;
-	maxAccel = a;
-	maxJerk = j;
-    }
+	public ProfileParameters(double d, double v, double a, double j) {
+		distance = d;
+		maxVelocity = v;
+		maxAccel = a;
+		maxJerk = j;
+	}
 
 }

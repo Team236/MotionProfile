@@ -17,37 +17,37 @@ import edu.wpi.first.wpilibj.SpeedController;
  */
 public class DriveSide implements ProfileSource, ProfileOutput {
 
-    private ArrayList<SpeedController> motors;
-    private Encoder enc;
+	private ArrayList<SpeedController> motors;
+	private Encoder enc;
 
-    public DriveSide(ArrayList<SpeedController> _motors, Encoder _enc) {
-	this.enc = _enc;
+	public DriveSide(ArrayList<SpeedController> _motors, Encoder _enc) {
+		this.enc = _enc;
 
-	motors = new ArrayList<SpeedController>();
+		motors = new ArrayList<SpeedController>();
 
-	// Copy motors from arg list to the private list
-	for (int i = 0; i < _motors.size() - 1; i++) {
-	    this.motors.add(_motors.get(i));
+		// Copy motors from arg list to the private list
+		for (int i = 0; i < _motors.size() - 1; i++) {
+			this.motors.add(_motors.get(i));
+		}
 	}
-    }
 
-    public void addMotor(SpeedController _motor) {
-	motors.add(_motor);
-    }
-
-    @Override
-    public void setSpeed(double speed) {
-	for (int i = 0; i < motors.size(); i++) {
-	    motors.get(i).set(speed);
+	public void addMotor(SpeedController _motor) {
+		motors.add(_motor);
 	}
-    }
 
-    @Override
-    public double getDistance() {
-	return enc.getDistance();
-    }
+	@Override
+	public void setSpeed(double speed) {
+		for (int i = 0; i < motors.size(); i++) {
+			motors.get(i).set(speed);
+		}
+	}
 
-    public double getSpeed() {
-	return motors.get(0).get();
-    }
+	@Override
+	public double getDistance() {
+		return enc.getDistance();
+	}
+
+	public double getSpeed() {
+		return motors.get(0).get();
+	}
 }

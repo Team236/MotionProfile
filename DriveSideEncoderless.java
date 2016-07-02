@@ -16,24 +16,24 @@ import edu.wpi.first.wpilibj.SpeedController;
  */
 public class DriveSideEncoderless implements ProfileOutput {
 
-    private ArrayList<SpeedController> motors;
+	private ArrayList<SpeedController> motors;
 
-    public DriveSideEncoderless(ArrayList<SpeedController> _motors) {
-	this.motors = _motors;
-    }
-
-    public void addMotor(SpeedController _motor) {
-	motors.add(_motor);
-    }
-
-    @Override
-    public void setSpeed(double speed) {
-	for (int i = 0; i < motors.size(); i++) {
-	    motors.get(i).set(speed);
+	public DriveSideEncoderless(ArrayList<SpeedController> _motors) {
+		this.motors = _motors;
 	}
-    }
 
-    public double getSpeed() {
-	return motors.get(0).get();
-    }
+	public void addMotor(SpeedController _motor) {
+		motors.add(_motor);
+	}
+
+	@Override
+	public void setSpeed(double speed) {
+		for (int i = 0; i < motors.size(); i++) {
+			motors.get(i).set(speed);
+		}
+	}
+
+	public double getSpeed() {
+		return motors.get(0).get();
+	}
 }

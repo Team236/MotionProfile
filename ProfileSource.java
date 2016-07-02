@@ -9,5 +9,5 @@ package motionProfile;
  *
  */
 public interface ProfileSource {
-    public double getDistance();
+	public double getDistance();
 }
