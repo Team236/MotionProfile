@@ -57,13 +57,16 @@ public class ProfileFollower implements Updatable {
 
 	// Calculate the acceleration and velocity feedforward
 	double v = kV * profile.get(i).speed;
+	double a = kA * profile.get(i).acceleration;
 	// Calculate the correction
 	double correction = kP * (position - source.getDistance());
 	// Set the speed of the motor with correction
+	double speed = v + a - correction;
+
 	if (isInverted) {
-	    output.setSpeed(-(v + correction));
+	    output.setSpeed(-speed);
 	} else {
-	    output.setSpeed(v + correction);
+	    output.setSpeed(speed);
 	}
 	// Increment our loop counter
 	i++;
