@@ -19,14 +19,16 @@ public class DriveSide implements ProfileSource, ProfileOutput {
 
 	private ArrayList<SpeedController> motors;
 	private Encoder enc;
+	private boolean invertEncoder;
 
-	public DriveSide(ArrayList<SpeedController> _motors, Encoder _enc) {
+	public DriveSide(ArrayList<SpeedController> _motors, Encoder _enc, boolean _invertEncoder) {
 		this.enc = _enc;
+		invertEncoder = _invertEncoder;
 
 		motors = new ArrayList<SpeedController>();
 
 		// Copy motors from arg list to the private list
-		for (int i = 0; i < _motors.size() - 1; i++) {
+		for (int i = 0; i < _motors.size(); i++) {
 			this.motors.add(_motors.get(i));
 		}
 	}
@@ -44,7 +46,8 @@ public class DriveSide implements ProfileSource, ProfileOutput {
 
 	@Override
 	public double getDistance() {
-		return enc.getDistance();
+		//if invert encoder is true, multiply by -1, otherwise multiply by 1.
+		return enc.getDistance() * (invertEncoder?-1:1);
 	}
 
 	public double getSpeed() {
