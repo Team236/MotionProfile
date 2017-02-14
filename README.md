@@ -12,8 +12,8 @@ If your robot project (`workspace/robot`) is not a git project, this is very sim
 Just open the command line, navigate to `workspace/robot/src` and type the following
 command: 
 ```
-git clone https://https://github.com/Team236/MotionProfile.git motionProfile
-git clone https://https://github.com/Team236/Updater.git updater
+git clone https://github.com/Team236/MotionProfile.git motionProfile
+git clone https://github.com/Team236/Updater.git updater
 ```
 
 If your robot project is a git project, then you have to add it as a git submodule.
@@ -23,7 +23,7 @@ perfect. Just navigate to `workspace/robot/src` and type the following commands:
 
 ```
 git submodule add https://github.com/Team236/MotionProfile.git motionProfile
-git submodule add https://https://github.com/Team236/Updater.git updater
+git submodule add https://github.com/Team236/Updater.git updater
 git submodule init
 ```
 
